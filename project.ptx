@@ -1,8 +1,58 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- This file, the project manifest, provides the overall configuration for your PreTeXt project. To edit the content of your document, open `source/main.ptx`. See https://pretextbook.org/doc/guide/html/processing-CLI.html#cli-project-manifest. -->
 <project ptx-version="2">
   <targets>
-    <target name="web" format="html" />
-    <target name="print" format="pdf" />
+    <target name="html" format="html" xsl="acs-html.xsl" />
+    <target name="latex" format="latex" xsl="acs-latex.xsl" />
+    <target name="pdf" format="pdf" xsl="acs-latex.xsl" latex-engine="xelatex" />
+    <target
+      name="runestone"
+      format="html"
+      xsl="acs-html.xsl"
+      output-dir="../published/ac-single"/>
+    <target 
+      name="solutions-latex" 
+      format="latex"
+      source="acs-solution-manual.xml" 
+      publication="publication-solutions.ptx"
+      xsl="acs-solution-manual.xsl" />
+    <target
+      name="solutions-pdf" 
+      format="pdf"
+      source="acs-solution-manual.xml" 
+      publication="publication-solutions.ptx"
+      latex-engine="xelatex"
+      xsl="acs-solution-manual.xsl" />
+    <target
+      name="workbook-latex"
+      format="latex"
+      source="acs-activity-workbook-14.xml" 
+      publication="publication-workbook-14.ptx"
+      xsl="acs-activity-workbook.xsl" />
+    <target
+      name="workbook-pdf"
+      format="pdf"
+      source="acs-activity-workbook-14.xml" 
+      publication="publication-workbook-14.ptx"
+      latex-engine="xelatex"      
+      xsl="acs-activity-workbook.xsl" />
+    <target
+      name="workbook58-latex"
+      format="latex"
+      source="acs-activity-workbook-58.xml" 
+      publication="publication-workbook-58.ptx"
+      xsl="acs-activity-workbook.xsl" />
+    <target
+      name="workbook58-pdf"
+      format="pdf"
+      source="acs-activity-workbook-58.xml" 
+      publication="publication-workbook-58.ptx"
+      latex-engine="xelatex"
+      xsl="acs-activity-workbook.xsl" />
+    <!-- html-hosted is a target specifically for deployment to ActiveCalculus.org -->
+    <target 
+      name="html-hosted"
+      format="html"
+      xsl="acs-html.xsl"
+      output-dir="/home/activec2/public_html/single" />
   </targets>
 </project>
